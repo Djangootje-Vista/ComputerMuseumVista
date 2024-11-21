@@ -37,3 +37,4 @@ showOverlayButton.addEventListener('click', () => {
 document.getElementById('close-overlay').addEventListener('click', () => {
     overlay.style.display = 'none';
 });
+
