@@ -7,11 +7,11 @@
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #10192D; /* Dark blue */
-    color: #ffffff;
-    line-height: 1.6;
-    padding: 25px 20px;
+    font-family: Arial, sans-serif;
+    background-color: #10192D;
+    color: white;
+    margin: 0;
+    padding: 20px;
 }
 
 /* Header Styling */
@@ -23,7 +23,7 @@ header {
 header .banner {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 100px;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -55,88 +55,88 @@ header .banner h1 {
     margin-bottom: 40px;
 }
 
-/* Individual Product Card */
+/* Algemene stijl */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #10192D;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Productkaart */
 .product {
     background-color: #1B2845;
     border-radius: 12px;
-    overflow: hidden;
+    padding: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-}
-
-.product:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+    overflow: hidden; /* Voorkomt dat inhoud buiten de kaart gaat */
+    transition: height 0.3s ease; /* Soepele animatie voor hoogte */
 }
 
 .product img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 12px;
 }
 
 .product-info {
-    padding: 15px;
-    color: #D6EAF8;
-}
-
-/* Dropdown Section */
-.info-dropdown {
     margin-top: 10px;
-    position:static;
 }
 
-.info-button {
-    background-color: #A9CCE3;
-    color: #1B2845;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 20px;
+/* Info-afbeelding */
+.info-icon {
+    height: 40px;
+    width: 40px;
+    
+    max-width: 40px;
+    max-height: 40px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
 }
 
-.info-button:hover {
-    background-color: #D6EAF8;
-    transform: scale(1.05);
+.info-icon:hover {
+    transform: scale(1.1); /* Zoom effect bij hover */
+    width: 40px;
+    height: 40px;
 }
 
-/* Dropdown Content Styling */
+/* Dropdown inhoud */
 .dropdown-content {
-    display: none; /* Verberg standaard */
+    max-height: 0; /* Standaard onzichtbaar */
+    overflow: hidden; /* Verberg inhoud buiten het zichtbare gebied */
     background-color: #121E36;
     color: #f0f8ff;
-    padding: 40px;
+    margin-top: 10px;
+    padding: 0 15px; /* Padding wordt verborgen als inhoud niet zichtbaar is */
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 10;
+    transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-/* Toon dropdown bij hover */
+/* Toon inhoud op hover */
 .info-dropdown:hover .dropdown-content {
-    display: block;
-    animation: fade-in 0.5s ease forwards;
-    max-height: 200px;
-    overflow:auto;
+    max-height: 500px; /* Pas dit aan afhankelijk van de inhoud */
+    padding: 15px; /* Padding weer toevoegen bij zichtbaar */
 }
+
+
 
 /* Fade-in Animation */
 @keyframes fade-in {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-30px);
+        
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 /* Footer */
@@ -171,6 +171,7 @@ form {
     width: 300px;
     transition: all 0.3s ease;
     outline: none;
+    margin-top: 15px;
 }
 
 .search-bar:focus {
