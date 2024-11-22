@@ -1,9 +1,57 @@
-/* General Reset */
+/* Algemene reset */
 * {
     margin: 0;
     padding: 0;
+    height:max-content;
+    width: auto;
     box-sizing: border-box;
 }
+
+/* Volledige scherm achtergrond voor het laadscherm */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #10192D; /* Donkerblauw */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999; /* Zorg dat het boven alles staat */
+    opacity: 1; /* Start volledig zichtbaar */
+    transition: opacity 1s ease; /* Vloeiende overgang bij verbergen */
+}
+
+/* Verborgen toestand van het laadscherm */
+#loading-screen.hidden {
+    opacity: 0; /* Onzichtbaar maken */
+    pointer-events: none; /* Geblokkeerde interacties */
+}
+
+/* GIF-styling */
+.loading-gif {
+    width: 150px; /* Pas grootte aan */
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+/* Verborgen inhoud standaard */
+#main-content {
+    display: none; /* Start verborgen */
+    opacity: 0; /* Start transparant */
+    transition: opacity 0.5s ease; /* Vloeiende overgang bij tonen */
+}
+
+/* Toon de inhoud na het laden */
+#main-content.visible {
+    display: block; /* Zichtbaar maken */
+    opacity: 1; /* Volledig zichtbaar */
+    animation: fade-in 0.4s ease; /* Optioneel: fade-in animatie */
+}
+
 
 /* Body Styling */
 body {

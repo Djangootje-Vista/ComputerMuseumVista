@@ -13,28 +13,19 @@ document.querySelectorAll('.product').forEach((product) => {
     observer.observe(product);
 });
 
-// Overlay functionality
-const overlay = document.createElement('div');
-overlay.className = 'overlay';
-overlay.innerHTML = `
-    <div class="overlay-content">
-        <h2>Explore the Museum</h2>
-        <p>Discover iconic artifacts and delve into the fascinating history of computing. The Vista Computer Museum brings the past alive with detailed exhibits, interactive displays, and engaging stories.</p>
-        <button id="close-overlay" class="overlay-button">Close</button>
-    </div>
-`;
-document.body.appendChild(overlay);
 
-const showOverlayButton = document.createElement('button');
-showOverlayButton.className = 'show-overlay-button';
-showOverlayButton.textContent = 'Learn More About the Museum';
-document.querySelector('.intro').appendChild(showOverlayButton);
+document.addEventListener("DOMContentLoaded", () => {
+    const loadingScreen = document.getElementById("loading-screen");
+    const mainContent = document.getElementById("main-content");
 
-showOverlayButton.addEventListener('click', () => {
-    overlay.style.display = 'flex';
+    // Houd het laadscherm 1 seconde zichtbaar
+    setTimeout(() => {
+        // Voeg de "hidden" klasse toe om het laadscherm te verbergen
+        loadingScreen.classList.add("hidden");
+
+        // Toon de inhoud na een korte vertraging (gelijk aan de overgangsduur van 1s)
+        setTimeout(() => {
+            mainContent.classList.add("visible");
+        }, 200); // Wacht tot de overgang van het laadscherm is voltooid
+    }, 1000); // Laadscherm blijft 1 seconde zichtbaar
 });
-
-document.getElementById('close-overlay').addEventListener('click', () => {
-    overlay.style.display = 'none';
-});
-
