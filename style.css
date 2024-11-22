@@ -306,3 +306,45 @@ form {
     transform: translateY(20px); /* Offset for animation */
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #10192D;
+}
+.search-container {
+    flex: 1;
+}
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.navbar a {
+    float: left; /* Plaats de links naast elkaar */
+    display: block;
+    color: rgb(212, 13, 13); /* Kleur van de tekst */
+    text-align: center;
+    padding: 14px 16px; /* Ruimte binnen de links */
+    text-decoration: none; /* Verwijder de onderstreping */
+}
+
+
+
+
+
+
+
+
+
+
+
+
