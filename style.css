@@ -94,6 +94,23 @@ header .banner h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+/* Algemene navbar styling */
+.navbar a {
+    color: white; /* Witte tekstkleur voor de links */
+    padding: 10px 20px;
+    text-decoration:double;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect voor de links */
+.navbar a:hover {
+    background-color: #A9CCE3;
+    color: #1B2845;
+}
+
+
 /* Products Section */
 .products {
     display: grid;
@@ -126,8 +143,8 @@ body {
 
 .product img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 300px;
+    object-fit:cover;
     border-radius: 12px;
 }
 
@@ -139,7 +156,7 @@ body {
 .info-icon {
     height: 40px;
     width: 40px;
-    
+
     max-width: 40px;
     max-height: 40px;
     cursor: pointer;
@@ -198,138 +215,108 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Search Bar Styling */
+/* Zoekbalk gecentreerd en kleiner */
 .search-container {
     display: flex;
-    justify-content: center ;
-    align-items:self-end;
-}
-
-form {
-    display: flex-end;
-    align-items: flex-end;
-    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    position: relative;
+    flex-direction: column;
 }
 
 .search-bar {
-    padding: 10px 15px;
+    padding: 8px 12px;
     font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 25px;
-    width: 300px;
-    transition: all 0.3s ease;
+    border-radius: 15px;
+    width: 350px;
     outline: none;
-    margin-top: 15px;
+    transition: all 0.5s ease;
+    text-align: center;
 }
 
 .search-bar:focus {
     border-color: #A9CCE3;
-    box-shadow: 0 0 10px rgba(169, 204, 227, 0.5);
 }
 
-.search-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    background-color: #A9CCE3;
-    color: #1140a6;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.search-button:hover {
-    background-color: #D6EAF8;
-}
-
-
-/* Overlay Styles */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+/* Dropdown-menu styling */
+.product-dropdown {
+    display: none; /* Standaard verborgen */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: #fff; /* Witte achtergrond */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50px; /* Net onder de zoekbalk */
     z-index: 1000;
 }
 
-.overlay-content {
-    background-color: #1B2845;
-    color: #f0f8ff;
-    padding: 40px;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 600px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    animation: fade-in 0.5s ease;
+.product-dropdown.visible {
+    display: block; /* Toon wanneer er gezocht wordt */
 }
 
-.overlay-button {
-    background-color: #A9CCE3;
-    color: #1B2845;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 20px;
-}
-
-.overlay-button:hover {
-    background-color: #D6EAF8;
-}
-
-/* Button for showing overlay */
-.show-overlay-button {
-    background-color: #A9CCE3;
-    color: #1B2845;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.show-overlay-button:hover {
-    background-color: #D6EAF8;
-    transform: scale(1.05);
-}
-
-.product {
-    opacity: 1; /* Start products invisible */
-    transform: translateY(20px); /* Offset for animation */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-
-
-
-/* Search Bar Styling */
-.search-container {
-    flex-direction:inherit; /* Push the nav bar to the right */
-    display:contents;
-    margin-bottom: 10px;
-    margin-left: 100px;
-    justify-content: flex-end; /* Align search bar to the left */
-}
-
-input[type="text"] {
+.product-dropdown li {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #333; /* Donkere tekstkleur */
+    text-align: center;
 }
 
+.product-dropdown li:last-child {
+    border-bottom: none;
+}
 
-.navbar a {
-    color: rgb(212, 13, 13); /* Text color */
-    padding: 5px 10px; /* Space around links */
-    text-decoration: none; /* Remove underline */
-    margin-top: 10px;
-    font-size: 1rem;
+.product-dropdown li:hover {
+    background-color: #f0f8ff;
+    color: #000;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0;
+    max-height: 200px;
+    overflow-y: auto; /* Scrollbaar als de lijst te lang wordt */
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: none;
+    position: absolute; /* Dropdown-positie */
+    width: 100%; /* Match breedte zoekbalk */
+    z-index: 100;
+}
+
+.product-list.visible {
+    display: block;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+
+.product-item:hover {
+    background-color: #f9f9f9;
+}
+
+.product-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 4px;
+    object-fit: cover;
 }
