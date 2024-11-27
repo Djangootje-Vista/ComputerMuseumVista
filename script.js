@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image: 'https://cdn.arstechnica.net/wp-content/uploads/2024/10/GettyImages-182661978-scaled.jpg' 
         },
         { 
-            name: 'Floppy Kat', 
+            name: 'Emre is bol', 
             image: 'https://via.placeholder.com/50x50.png?text=KB' 
         },
         { 

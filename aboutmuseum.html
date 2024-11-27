@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vista Computer Museum</title>
-<!-- Laadscherm -->
-<div id="loading-screen">
-    <img src="random" alt="Loading" class="loading-gif">
-    <p>Website word ingeladen...</p>
-</div>
-<body>
-
-       <!-- Header Section -->
-    </header>
-    <header>
-    <div class="banner">
-        <img src="https://i.ibb.co/jMpLsWT/north-west-computer-museum-exhibits-banner-2048x663.jpg" alt="Vista Computer Museum" class="banner-image">
-    </div>
-
-    <div class="navbar">
-        <div class="dropdown">
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="aboutmuseum.html">About the museum</a>
-
-    <header>
-        <div class="search-container">
-            <form action="#" method="get">
-                <input type="text" name="search" class="search-bar" placeholder="Zoeken doe je hier!" />
-                <button type="submit" class="search-button">Zoeken</button>
-            </form>
-        </div>
-
-<section class="intro">
-
-  
-</section>
-
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
+    <!-- Laadscherm -->
+    <div id="loading-screen">
+        <img src="https://s11.gifyu.com/images/SGKc2.gif" alt="Loading" class="loading-gif">
+        <p>Website word ingeladen...</p>
+    </div>
+
+
+    <!-- Header Section -->
+    <header>
+        <div class="banner">
+            <img src="https://i.ibb.co/jMpLsWT/north-west-computer-museum-exhibits-banner-2048x663.jpg" alt="Vista Computer Museum" class="banner-image">
+            <h1 class="banner-text">Vista Computer Museum</h1>
+        </div>
+    </header>
+
+        <!-- Header Section -->
+        <div class="navbar">
+            <div class="dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="aboutmuseum.html">About the museum</a>
+    
+        <header></header>
+
+
+    <section class="intro">
+
+    <body>
+<!-- Zoekbalk -->
+<div class="search-container">
+    <input 
+        type="text" 
+        id="productInput" 
+        class="search-bar" 
+        placeholder="Zoek een product..." 
+        autocomplete="off" 
+        oninput="filterProducts()">
+    <ul id="productList" class="product-dropdown">
+        <!-- Dynamische zoekresultaten komen hier -->
+    </ul>
+</div>
+<script src="script.js"></script>
+</body>
+
 
 <!-- Pagina-inhoud -->
-<div id="main-content">
+<div id="About_museum">
     <header>
         <h1>About the Museum</h1>
     </header>
+
+    <div id="section_top">
     <section>
         <p>Het Computermuseum van VISTA College toont de fascinerende geschiedenis van technologie,</p>
-        <p>met iconische computers en apparaten. Ontdek hoe innovatie de digitale wereld vormgaf en laat je inspireren door technologische mijlpalen!</p>
+        <p>met iconische computers en apparaten. Ontdek hoe innovatie de digitale wereld vorm gaf en laat je inspireren door technologische mijlpalen!</p>
     </section>
 </div>
 
 <script src="script.js"></script>
-</body>
-</html> 
     
 
-
-    
- <!-- Footer Section -->
- <footer>
-    <p>&copy; 2024 Vista Computer Museum. All rights reserved.</p>
-</footer>
-
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Vista Computer Museum. All rights reserved.</p>
+    </footer>
 </body>
 </html>

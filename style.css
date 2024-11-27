@@ -320,3 +320,14 @@ footer {
     border-radius: 4px;
     object-fit: cover;
 }
+
+#About_museum {
+    display:center; /* Start verborgen */
+    margin-top: 80px; 
+}
+
+
+#section_top {
+    display:center; /* Start verborgen */
+    margin-top: 80px; 
+}
