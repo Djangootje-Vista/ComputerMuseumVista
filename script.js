@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Placeholder image based on FotoID (you can update this with actual image URLs)
                 const img = document.createElement('img');
-                img.src = "http://10.20.185.212:8080/command?Command=getImage&ID=1&Text=nil";
+                img.src = "http://10.20.183.221:8080/command?Command=getImage&ID=1&Text=nil";
                 img.alt = product.Naam;
                 img.classList.add('product-image');
 
