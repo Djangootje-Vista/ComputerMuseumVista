@@ -1,4 +1,4 @@
-const ipConfig = "10.20.185.212"
+const ipConfig = "10.20.183.221"
 const startUrl = (`http://${ipConfig}:8080/`)
 
 // Add fade-in animation to all products on scroll
