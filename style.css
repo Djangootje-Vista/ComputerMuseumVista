@@ -385,12 +385,19 @@ footer {
 }
 
 #About_museum {
+    font-weight: 600;
     display:center; /* Start verborgen */
-    margin-top: 80px; 
+    margin-top: 30px; 
 }
 
-
-#section_top {
+#section_bottom {
+    font-weight: 600;
     display:center; /* Start verborgen */
-    margin-top: 80px; 
+    margin-top: 30px; 
+}
+
+#section_bottom1 {
+    font-weight: 600;
+    display:center; /* Start verborgen */
+    margin-top: 30px; 
 }
