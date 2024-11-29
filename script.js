@@ -1,5 +1,5 @@
-const ipConfig = "10.20.183.221"
-const startUrl = (`http://${ipConfig}:8080/`)
+const ipConfig = "localhost";
+const startUrl = `http://${ipConfig}:8080/`;
 
 // Add fade-in animation to all products on scroll
 const observer = new IntersectionObserver((entries) => {
@@ -48,9 +48,7 @@ async function fetchImage(FotoID) {
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
-
     const loadingScreen = document.getElementById("loading-screen");
 
     if (loadingScreen) {
@@ -79,18 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (products.length === 0) {
             console.error("No products found.");
-            const noResult = document.createElement('li');
-            noResult.textContent = 'Geen resultaten gevonden';
-            productList.appendChild(noResult);
+
+            // Check if the "no results" message already exists
+            if (!document.querySelector('.no-results')) {
+                const noResult = document.createElement('li');
+                noResult.textContent = 'Geen resultaten gevonden';
+                noResult.classList.add('no-results'); // Add a unique class
+                productList.appendChild(noResult);
+            }
         } else {
             // Loop through the products and create the list items
             products.forEach(product => {
                 const li = document.createElement('li');
                 li.classList.add('product-item');
 
-                // Placeholder image based on FotoID (you can update this with actual image URLs)
+                // Fetch the image dynamically
                 const img = document.createElement('img');
-                img.src = "http://10.20.183.221:8080/command?Command=getImage&ID=1&Text=nil";
+                img.src = `${startUrl}command?Command=getImage&ID=${product.FotoID}&Text=nil`; // Update with actual FotoID
                 img.alt = product.Naam;
                 img.classList.add('product-image');
 
@@ -106,6 +109,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        productList.classList.add('visible');
+        productList.classList.add('visible'); // Show the product list
     });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const body = document.body;
+
+    if (/mobile|android|iphone|ipad|tablet/.test(userAgent)) {
+        body.classList.add("mobile-user"); // Voeg een klasse toe voor mobiele gebruikers
+    } else {
+        body.classList.add("desktop-user"); // Voeg een klasse toe voor desktop-gebruikers
+    }
 });

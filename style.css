@@ -94,30 +94,41 @@ header .banner h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Algemene navbar styling */
-.navbar a {
+.navbar {
+    display: flex; /* Flexbox voor positionering */
+    justify-content: flex-end; /* Centraal uitgelijnd, kan ook 'flex-end' of 'flex-start' zijn */
+    align-items: center; /* Verticaal gecentreerd */
+    background-color: #10192D; /* Achtergrondkleur voor de navbar */
+    padding: 0px 10px; /* Ruimte rondom de navbar */
+}
+
+.link-group {
+    display: flex; /* Zorgt dat de links naast elkaar staan */
+    gap: 10px; /* Ruimte tussen de links */
+}
+
+.link-group a {
     color: white; /* Witte tekstkleur voor de links */
-    padding: 10px 20px;
-    text-decoration:double;
-    font-size: 1.1rem;
+    text-decoration: none; /* Onderlijning uitgeschakeld */
+    font-size: 1.0rem;
     border-radius: 8px;
+    padding: 10px 20px; /* Ruimte binnen de links */
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect voor de links */
-.navbar a:hover {
-    background-color: #A9CCE3;
-    color: #1B2845;
+.link-group a:hover {
+    background-color: #2a4172; /* Achtergrondkleur bij hover */
 }
 
 
 /* Products Section */
-.products {
+.products-hp {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 producten naast elkaar */
-    gap: 20px;
+    gap: 10px; /* Ruimte tussen de items */
     margin-top: 80px;
     margin-bottom: 40px;
+    justify-items: center; /* Centrerend binnen hun grid-cel */
 }
 
 /* Algemene stijl */
@@ -130,27 +141,79 @@ body {
 }
 
 /* Productkaart */
-.product {
+.product-hp {
     background-color: #1B2845;
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     text-align: center;
-    margin-bottom: 20px;
     overflow: hidden; /* Voorkomt dat inhoud buiten de kaart gaat */
-    transition: height 0.3s ease; /* Soepele animatie voor hoogte */
+    transition: transform 0.3s ease; /* Animatie voor hover effect */
+    width: 200%; /* Zorgt dat kaarten netjes schalen */
+    max-width: 600px; /* Beperkt de breedte per kaart */
+}
+
+.product-hp img {
+    width: 100%;
+    height: 200px; /* Zorgt voor consistente hoogte */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.product-info-hp {
+    margin-top: 10px;
+}
+
+/* Hover Effect */
+.product-hp:hover {
+    transform: scale(1.05); /* Een subtiel inzoom effect */
+}
+
+.products-section {
+    display: flex;
+    justify-content: center; /* Centraal uitgelijnd */
+    align-items: center;
+    flex-wrap: wrap; /* Zorgt dat items op de volgende regel gaan als er geen ruimte is */
+    gap: 20px; /* Ruimte tussen productgroepen */
+    padding: 20px;
+}
+
+.product-group {
+    display: flex;
+    justify-content: space-between; /* Ruimte tussen de producten */
+    gap: 10px;
+    flex-wrap: wrap; /* Zorgt dat items netjes worden weergegeven op kleine schermen */
+    max-width: 2000px; /* Limiteert de breedte van de groep */
+}
+
+.product {
+    flex: 1 1 calc(33.333% - 20px); /* 3 producten naast elkaar, met rekening voor de gap */
+    max-width: calc(33.333% - 20px); /* Limiteert de breedte per product */
+    background-color: #1B2845;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
 }
 
 .product img {
-    width: 100%;
-    height: 300px;
-    object-fit:cover;
-    border-radius: 12px;
+    width: 500px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .product-info {
     margin-top: 10px;
+    color: white;
 }
+
+.product:hover {
+    transform: scale(1.05); /* Vergroot het product bij hover */
+}
+
+
 
 /* Info-afbeelding */
 .info-icon {
