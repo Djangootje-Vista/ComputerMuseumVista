@@ -415,10 +415,11 @@ footer {
 }
 
 #products_9 img {
-    height: 200px;
+    height: 350px;
+    margin-left: auto;
     width: auto; /* Houd de aspectratio correct */
     object-fit: cover;
-    margin-top: 30px;
+    margin-top: 10px;
     max-width: 100%; /* Zorg dat de afbeelding niet groter wordt dan zijn container */
     align-self: start; /* Uitlijning bovenaan */
     display: block; /* Zorg dat de afbeelding geen inline-ruimte gebruikt */
