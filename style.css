@@ -170,47 +170,105 @@ body {
 }
 
 .products-section {
-    display: flex;
-    justify-content: center; /* Centraal uitgelijnd */
-    align-items: center;
-    flex-wrap: wrap; /* Zorgt dat items op de volgende regel gaan als er geen ruimte is */
-    gap: 20px; /* Ruimte tussen productgroepen */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between products */
+    justify-items: center; /* Center the items in their cells */
+    align-items: stretch; /* Make items stretch to fill grid rows */
     padding: 20px;
 }
 
+/* Grid layout voor producten */
 .product-group {
-    display: flex;
-    justify-content: space-between; /* Ruimte tussen de producten */
-    gap: 10px;
-    flex-wrap: wrap; /* Zorgt dat items netjes worden weergegeven op kleine schermen */
-    max-width: 2000px; /* Limiteert de breedte van de groep */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 gelijke kolommen */
+    gap: 20px; /* Ruimte tussen items */
+    width: 6000px;
+    max-width: 1850px; /* Maximale breedte van de grid */
+    margin: 0 auto; /* Center de grid */
+    padding: 0 20px; /* Voeg padding toe aan de randen */
 }
 
+/* Standaard instellingen voor productkaarten */
 .product {
-    flex: 1 1 calc(33.333% - 20px); /* 3 producten naast elkaar, met rekening voor de gap */
-    max-width: calc(33.333% - 20px); /* Limiteert de breedte per product */
     background-color: #1B2845;
     border-radius: 8px;
     text-align: center;
     padding: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
+    height: 400px; /* Vaste hoogte voor elke kaart */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
 }
 
+/* Standaard instellingen voor afbeeldingen */
 .product img {
-    width: 500px;
-    height: 250px;
+    width: 100%; /* Laat de afbeelding de breedte van de container vullen */
+    height: 200px; /* Vaste hoogte voor afbeeldingen */
+    object-fit: cover; /* Zorg dat de afbeelding netjes wordt geschaald */
+    border-radius: 8px;
+}
+
+/* Informatie over het product */
+.product-info {
+    color: white;
+    margin-top: 10px;
+    flex-grow: 1; /* Vul de resterende ruimte */
+}
+
+/* Hover-effect */
+.product:hover {
+    transform: scale(1.05);
+}
+
+
+
+@media (max-width: 768px) {
+    .product-group {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-group {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+}
+
+
+/* Ensure product-link doesn't affect layout */
+.product-link {
+    text-decoration: none; /* Remove underlines */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the entire link area clickable */
+}
+
+/* Fix for layout consistency */
+.product-link .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1B2845;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    width: 100%; /* Make it responsive */
+    max-width: 500px; /* Adjust maximum width */
+}
+
+.product-link .product img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
     border-radius: 8px;
 }
 
-.product-info {
-    margin-top: 10px;
-    color: white;
-}
-
-.product:hover {
-    transform: scale(1.05); /* Vergroot het product bij hover */
+.product-link .product:hover {
+    transform: scale(1.05); /* Add hover effect */
 }
 
 
@@ -400,4 +458,16 @@ footer {
     font-weight: 600;
     display:center; /* Start verborgen */
     margin-top: 30px; 
+}
+
+.invisible-button {
+    position: absolute; /* Zorgt ervoor dat de knop over het product geplaatst wordt */
+    top: 0;
+    left: 0;
+    width: 100%; /* Bedekt het hele product */
+    height: 100%;
+    z-index: 1; /* Zorg ervoor dat de knop bovenop ligt */
+    background: transparent; /* Maak de knop onzichtbaar */
+    border: none;
+    cursor: pointer; /* Verandert de cursor zodat het een klikbare link aangeeft */
 }
