@@ -401,3 +401,31 @@ footer {
     display:center; /* Start verborgen */
     margin-top: 30px; 
 }
+
+#products_9 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolommen naast elkaar */
+    gap: 20px; /* Ruimte tussen de items */
+    margin-top: 80px;
+    margin-bottom: 40px;
+    justify-items: start; /* Uitlijnen naar links binnen hun grid-cel */
+    max-width: 1200px; /* Beperk de breedte van de container */
+    margin-left: auto;
+    margin-right: auto; /* Centreer de container op de pagina */
+}
+
+#products_9 img {
+    height: 200px;
+    width: auto; /* Houd de aspectratio correct */
+    object-fit: cover;
+    margin-top: 30px;
+    max-width: 100%; /* Zorg dat de afbeelding niet groter wordt dan zijn container */
+    align-self: start; /* Uitlijning bovenaan */
+    display: block; /* Zorg dat de afbeelding geen inline-ruimte gebruikt */
+}
+
+#header_1 {
+    font-weight: 600;
+    display:center; /* Start verborgen */
+    margin-top: 30px; 
+}
